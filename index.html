@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Your Graduation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap');
+
+:root {
+  --navy: #071426;
+  --navy2: #102640;
+  --silver: #dce6f2;
+  --muted: #a6b7cb;
+  --gold: #c7d5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--silver);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+section {
+  position: relative;
+  padding: 90px 20px;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  color: white;
+  animation: sparkle var(--speed, 3s) ease-in-out infinite alternate;
+}
+
+@keyframes sparkle {
+  from { opacity: .15; transform: scale(.7) rotate(0deg); }
+  to { opacity: .95; transform: scale(1.2) rotate(30deg); }
+}
+
+main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: min(100%, 850px);
+  margin: auto;
+}
+
+.eyebrow {
+  color: #b8c9dc;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  line-height: 2;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(35px, 8vw, 54px);
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+p {
+  line-height: 1.9;
+}
+
+.center {
+  text-align: center;
+}
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 65px 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 35%, #254365 0%, transparent 52%),
+    linear-gradient(150deg, #071426, #10243d 55%, #050d19);
+}
+
+.hero:before, .hero:after {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border: 1px solid #cbd9e522;
+  border-radius: 50%;
+}
+
+.hero:before {
+  top: -130px;
+  left: -110px;
+}
+
+.hero:after {
+  right: -150px;
+  bottom: -130px;
+}
+
+.hero-content {
+  max-width: 620px;
+  animation: rise 1.4s ease both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.moon {
+  font-size: 43px;
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-12px); }
+}
+
+.hero h1 {
+  font-size: clamp(52px, 12vw, 88px);
+  line-height: .98;
+  margin: 24px 0;
+}
+
+.hero h1 span {
+  display: block;
+  font-style: italic;
+  color: #b9cce2;
+}
+
+.hero p {
+  color: #c3d0df;
+  font-size: 13px;
+  max-width: 390px;
+  margin: 0 auto 28px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 25px;
+  border: 1px solid #d4e0ed;
+  border-radius: 50px;
+  color: #071426;
+  background: linear-gradient(135deg, #f0f5fb, #aebfd3);
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px #cbd9e533;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--silver);
+}
+
+.scroll-note {
+  margin-top: 38px;
+  color: #a9bacd;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.music-button {
+  position: fixed;
+  right: 17px;
+  bottom: 20px;
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #cbd9e577;
+  border-radius: 50%;
+  background: #142941ed;
+  color: white;
+  box-shadow: 0 5px 25px #0004;
+}
+
+.music-button.playing {
+  animation: musicGlow 2s infinite;
+}
+
+@keyframes musicGlow {
+  50% { box-shadow: 0 0 22px #c6d8ee77; }
+}
+
+.intro {
+  background: linear-gradient(#0b1b30, #0d2036);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.portrait {
+  padding: 9px;
+  border: 1px solid #b7c9df88;
+  background: #ffffff08;
+  transform: rotate(-2deg);
+  box-shadow: 0 20px 55px #0004;
+}
+
+.portrait img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+.portrait figcaption {
+  font-family: 'Great Vibes', cursive;
+  font-size: 25px;
+  text-align: center;
+  padding: 13px 0 6px;
+  color: #dbe7f5;
+}
+
+.intro-copy p {
+  color: #b8c8da;
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+.signature {
+  color: #dce6f2;
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.gallery-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, #223e5e, transparent 55%),
+    #09172a;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 17px;
+  align-items: start;
+}
+
+.photo-card {
+  padding: 8px 8px 18px;
+  background: #e8edf4;
+  color: #12243b;
+  box-shadow: 0 15px 35px #0003;
+  transition: transform .35s ease;
+}
+
+.photo-card:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+  transform: rotate(2deg);
+  margin-top: 22px;
+}
+
+.photo-card:hover {
+  transform: rotate(0) translateY(-6px);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  background: #d3dce7;
+}
+
+.photo-card .caption {
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  padding: 12px 2px 0;
+  font-size: 19px;
+}
+
+.photo-card .small-caption {
+  text-align: center;
+  font-size: 9px;
+  margin-top: 4px;
+  color: #65778c;
+  letter-spacing: 1px;
+}
+
+.quote-section {
+  text-align: center;
+  background: linear-gradient(145deg, #132b46, #09172a);
+}
+
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #b8cadf;
+}
+
+.quote-section blockquote {
+  max-width: 580px;
+  margin: auto;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 6vw, 39px);
+  line-height: 1.45;
+}
+
+.quote-section p {
+  color: #aebfd3;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.reasons {
+  background: #09172a;
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.reason {
+  padding: 23px 17px;
+  border: 1px solid #b9cbe51c;
+  background: linear-gradient(145deg, #132941, #0c1b2e);
+  border-radius: 5px;
+  transition: .3s;
+}
+
+.reason:hover {
+  border-color: #b9cbe566;
+  transform: translateY(-4px);
+}
+
+.reason .icon {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.reason h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.reason p {
+  font-size: 11px;
+  color: #aebfd3;
+}
+
+.letter-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, #274461, transparent 60%),
+    #0b1b30;
+}
+
+.letter-cover {
+  max-width: 570px;
+  margin: 35px auto 0;
+  padding: 38px 20px;
+  text-align: center;
+  border: 1px solid #c6d6e877;
+  background: linear-gradient(150deg, #162d47, #0b192b);
+  box-shadow: 0 20px 60px #0003;
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-cover:before, .letter-cover:after {
+  content: "✦";
+  position: absolute;
+  color: #e2ebf6;
+  font-size: 45px;
+  opacity: .4;
+}
+
+.letter-cover:before {
+  top: 10px;
+  left: 15px;
+}
+
+.letter-cover:after {
+  right: 15px;
+  bottom: 10px;
+}
+
+.letter-cover .envelope {
+  font-size: 57px;
+  margin-bottom: 16px;
+}
+
+.letter-cover p {
+  color: #b7c8dc;
+  font-size: 12px;
+  margin: 12px 0 23px;
+}
+
+.letter-content {
+  display: none;
+  max-width: 650px;
+  margin: 30px auto 0;
+  padding: clamp(23px, 6vw, 45px);
+  color: #26364a;
+  background: linear-gradient(135deg, #f4f6f9, #dbe4ee);
+  box-shadow: 0 20px 65px #0004;
+  line-height: 1.95;
+  animation: rise 1s ease both;
+}
+
+.letter-content h3 {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.letter-content p {
+  font-size: 13px;
+  margin-bottom: 17px;
+}
+
+.letter-content .letter-sign {
+  font-family: 'Great Vibes', cursive;
+  text-align: right;
+  font-size: 29px;
+  margin-top: 28px;
+}
+
+.flower-section {
+  overflow: hidden;
+  text-align: center;
+  background: #0b1b30;
+}
+
+.flower {
+  position: absolute;
+  font-size: 24px;
+  opacity: .6;
+  animation: flowerFloat 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes flowerFloat {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-22px) rotate(18deg); }
+}
+
+.flower-message {
+  max-width: 560px;
+  margin: auto;
+}
+
+.flower-message p {
+  color: #b7c8dc;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+footer {
+  padding: 38px 20px 80px;
+  text-align: center;
+  background: #050d19;
+  color: #a9bacd;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+footer .heart {
+  font-size: 22px;
+  color: #dce6f2;
+  margin-bottom: 10px;
+}
+
+#confetti {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+
+@media (min-width: 650px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+  .photo-card img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 560px) {
+  section {
+    padding: 70px 19px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .portrait {
+    width: min(80%, 280px);
+    margin: auto;
+  }
+
+  .portrait img {
+    height: 300px;
+  }
+
+  .intro-copy {
+    text-align: center;
+  }
+
+  .photo-card img {
+    height: 180px;
+  }
+
+  .reason-grid {
+    gap: 10px;
+  }
+
+  .reason {
+    padding: 18px 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<canvas id="confetti"></canvas>
+
+<!-- GANTI musik.mp3 DENGAN FILE MUSIK KAMU -->
+<audio id="bgMusic" src="monokrom.mp3" loop preload="auto"></audio>
+
+<button class="music-button" id="musicButton"
+        onclick="toggleMusic()" aria-label="Putar atau jeda musik">
+  ♫
+</button>
+
+<main>
+
+<!-- HALAMAN PEMBUKA -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="moon">✧ ☾ ✧</div>
+    <div class="eyebrow">A little surprise made for you</div>
+
+    <h1>Happy <span>Graduation.</span></h1>
+
+    <p>
+      For the boy who worked so hard to get here.
+      Today, the world gets to celebrate you,
+      and I hope you celebrate yourself, too.
+    </p>
+
+    <button class="button" onclick="startSurprise()">
+      OPEN YOUR SURPRISE ✦
+    </button>
+
+    <div class="scroll-note">MADE WITH LOVE · SCROLL DOWN ↓</div>
+  </div>
+</section>
+
+<!-- PESAN PEMBUKA DAN FOTO UTAMA -->
+<section class="intro" id="about">
+  <div class="container intro-grid">
+
+    <figure class="portrait">
+      <img src="foto1.jpeg" alt="Foto wisudawan"
+           onerror="this.style.opacity='.15'">
+      <figcaption>My favorite graduate </figcaption>
+    </figure>
+
+    <div class="intro-copy">
+      <div class="eyebrow">To Yudi Permana Putra</div>
+      <h2>Look at you,<br><i>you made it.</i></h2>
+
+      <p>
+        If only you could see yourself through my eyes,
+        you would understand just how much there is
+        to be proud of.
+      </p>
+
+      <p>
+        This little website is my way of celebrating you,
+        your journey, your hard work, and the beautiful
+        future waiting ahead of you.
+      </p>
+
+      <div class="signature">So proud of you </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERI FOTO -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Little moments, big memories</div>
+      <h2>A little gallery <i>of you.</i></h2>
+      <p>Every picture deserves its own little place here.</p>
+    </div>
+
+    <div class="photo-grid">
+
+      <div class="photo-card">
+        <img src="foto2.jpeg" alt="Kenangan 1">
+        <div class="caption">The beginning</div>
+        <div class="small-caption">A MEMORY TO KEEP</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="foto3.jpeg" alt="Kenangan 2">
+        <div class="caption">Look at you</div>
+        <div class="small-caption">MY FAVORITE VIEW</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="foto4.jpeg" alt="Kenangan 3">
+        <div class="caption">Little moments</div>
+        <div class="small-caption">FOREVER REMEMBERED</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="foto5.jpeg" alt="Kenangan 4">
+        <div class="caption">The graduate</div>
+        <div class="small-caption">YOU DID IT!</div>
+      </div>
+
+       <div class="photo-card">
+        <img src="foto6.jpeg" alt="Kenangan 4">
+        <div class="caption">The graduate</div>
+        <div class="small-caption">YOU DID IT!</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="foto7.jpeg" alt="Kenangan 4">
+        <div class="caption">The graduate</div>
+        <div class="small-caption">YOU DID IT!</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KUTIPAN -->
+<section class="quote-section">
+  <div class="container">
+    <div class="quote-mark">“</div>
+
+    <blockquote>
+      You deserve every beautiful thing
+      that is waiting for you beyond this day.
+    </blockquote>
+
+    <p>AND I'LL ALWAYS BE CHEERING FOR YOU </p>
+  </div>
+</section>
+
+<!-- ALASAN BANGGA -->
+<section class="reasons">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Things I hope you never forget</div>
+      <h2>Reasons I'm <i>proud of you.</i></h2>
+      <p>It's not only about the degree. It's about you.</p>
+    </div>
+
+    <div class="reason-grid">
+
+      <div class="reason">
+        <div class="icon">✦</div>
+        <h3>Your hard work</h3>
+        <p>
+          All those little efforts mattered.
+          I hope you give yourself credit for every step.
+        </p>
+      </div>
+
+      <div class="reason">
+        <div class="icon">☾</div>
+        <h3>Your strength</h3>
+        <p>
+          Even when things were difficult,
+          you kept moving forward.
+        </p>
+      </div>
+
+      <div class="reason">
+        <div class="icon">✦</div>
+        <h3>Your Character</h3>
+        <p>
+          I hope success never changes the
+          kind and gunuine person you are.
+        </p>
+      </div>
+
+      <div class="reason">
+        <div class="icon">∞</div>
+        <h3>Your future</h3>
+        <p>
+          There are so many things you haven't
+          discovered yet. Keep dreaming big.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SURAT PANJANG -->
+<section class="letter-section" id="letter">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Words from Yudi Permana Putra</div>
+      <h2>A letter <i>for you.</i></h2>
+      <p>Some things deserve more than just a congratulations.</p>
+    </div>
+
+    <div class="letter-cover" id="letterCover">
+      <div class="envelope">✉</div>
+      <div class="eyebrow">A LITTLE LETTER, JUST FOR YOU</div>
+
+      <h2 style="font-size:36px;">Dear, Yudi Permana Putra.</h2>
+
+      <p>
+        There's something I've been wanting to tell you
+        on your special day.
+      </p>
+
+      <button class="button" onclick="openLetter()">
+        OPEN MY LETTER 
+      </button>
+    </div>
+
+    <article class="letter-content" id="letterContent">
+
+      <h3>To the boy who made it. </h3>
+
+      <p>Haii, kamu. </p>
+
+      <p>
+        sebelumnya ani mau minta maaf dulu yaa
+        a karena ani sempat ngambil foto aa diam-diam,
+        honestly, ani nggak punya foto aa, 
+        sedangkan ani pengin punya foto buat kenang-kenangan di hari spesial aa ini.
+         ani sadar mungkin caranya kurang sopan, so I'm sorry if it makes you uncomfortable.
+      </p>
+
+      <p>
+       <b>Happy Graduation, A!</b>🎓✨
+        congratulations on achieving your <b>S.Ak. (Bachelor of Accounting)</b> 
+        degree! akhirnya, perjalanan panjang yang aa lewati dengan segala perjuangan, 
+        lelah, dan pengorbanannya kini membuahkan hasil. ani ikut senang dan bangga
+        karena aa berhasil sampai di titik ini.
+      </p>
+
+      <p>
+       semoga gelar yang aa dapatkan bukan cuma menjadi kebanggaan hari ini,
+       but also the beginning of many beautiful opportunities ahead, 
+       semoga ilmu yang aa punya bermanfaat, kariernya dilancarkan, 
+       rezekinya diperluas, dan cita-citanya satu per satu bisa terwujud
+      </p>
+
+      <p>
+      ani percaya, di balik toga yang aa kenakan hari ini,
+      ada banyak perjuangan yang mungkin nggak semua orang tau,
+      so, please be proud of yourself, a. you deserve every bit of happiness 
+      and success that comes your way
+      </p>
+
+      <p>
+        sekali lagi, congratulations on your graduation, a! 
+        semoga setelah ini langkah aa semakin dimudahkan, 
+        selalu dikelilingi orang-orang baik, dan bisa menjadi 
+        seseorang yang sukses tanpa kehilangan kerendahan hati.
+      </p>
+
+      <p>
+      <b>May your future be brighter than your dreams, 
+      and may every step you take lead you to something wonderful.</b>
+      semoga masa depan aa seindah harapan yang selama ini aa perjuangkan.
+      </p>
+
+      <p>
+        once again, <b>Happy Graduation, A!</b>
+         🎓 keep growing, keep shining, and never stop chasing your dreams. 
+        ani berharap banyak hal baik menanti aa di perjalanan berikutnya.
+
+         with warm wishes,
+         — Ani
+      </p>
+
+      <div class="letter-sign">
+        Always cheering for you 
+      </div>
+
+    </article>
+
+  </div>
+</section>
+
+<!-- PESAN PENUTUP + BUNGA -->
+<section class="flower-section">
+  <span class="flower" style="left:7%;top:15%">✿</span>
+  <span class="flower" style="right:8%;top:25%;animation-delay:1s">✧</span>
+  <span class="flower" style="left:15%;bottom:12%;animation-delay:2s">❀</span>
+  <span class="flower" style="right:15%;bottom:10%;animation-delay:3s">✿</span>
+
+  <div class="container flower-message">
+    <div style="font-size:48px;margin-bottom:20px;">
+      ✿ ✧ ❀
+    </div>
+
+    <div class="eyebrow">One last thing</div>
+
+    <h2>
+      This is only<br>
+      <i>the beginning.</i>
+    </h2>
+
+    <p>
+      May your next chapter be filled with courage,
+      beautiful opportunities, peaceful days,
+      and dreams that slowly become reality.
+    </p>
+
+    <p>
+      Congratulations, graduate.<br>
+      The world is lucky to have you in it. 
+    </p>
+
+    <button class="button secondary"
+            style="margin-top:28px"
+            onclick="backToTop()">
+      BACK TO THE BEGINNING ↑
+    </button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="heart">✦</div>
+  MADE WITH LOVE, JUST FOR YOU
+  <p style="margin-top:12px;font-size:10px">
+    A little corner of the internet to celebrate you.
+  </p>
+</footer>
+
+<script>
+// BINTANG BERKILAU
+const starBox = document.getElementById("stars");
+
+for (let i = 0; i < 75; i++) {
+  const star = document.createElement("span");
+  star.className = "star";
+  star.textContent = Math.random() > .5 ? "✦" : "·";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.fontSize = (Math.random() * 15 + 5) + "px";
+  star.style.setProperty("--speed", (Math.random() * 3 + 2) + "s");
+  star.style.animationDelay = Math.random() * 4 + "s";
+  starBox.appendChild(star);
+}
+
+// MUSIK
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+let musicPlaying = false;
+
+async function toggleMusic() {
+  if (musicPlaying) {
+    music.pause();
+    musicPlaying = false;
+    musicButton.textContent = "♫";
+    musicButton.classList.remove("playing");
+  } else {
+    try {
+      await music.play();
+      musicPlaying = true;
+      musicButton.textContent = "Ⅱ";
+      musicButton.classList.add("playing");
+    } catch (error) {
+      alert("Tambahkan file musik.mp3 di folder web kamu, lalu coba lagi ya!");
+    }
+  }
+}
+
+// COBA PUTAR OTOMATIS SAAT WEB DIBUKA
+window.addEventListener("load", async () => {
+  try {
+    await music.play();
+    musicPlaying = true;
+    musicButton.textContent = "Ⅱ";
+    musicButton.classList.add("playing");
+  } catch (error) {
+    // Browser mungkin meminta interaksi pengguna.
+    musicPlaying = false;
+  }
+});
+
+// MULAI SURPRISE
+function startSurprise() {
+  document.getElementById("about").scrollIntoView({
+    behavior: "smooth"
+  });
+
+  // Mencoba memutar musik setelah klik.
+  if (!musicPlaying) {
+    toggleMusic();
+  }
+
+  launchConfetti();
+}
+
+// MEMBUKA SURAT
+function openLetter() {
+  const content = document.getElementById("letterContent");
+  const cover = document.getElementById("letterCover");
+
+  content.style.display = "block";
+  cover.style.display = "none";
+
+  content.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  launchConfetti();
+}
+
+// CONFETTI
+function launchConfetti() {
+  const canvas = document.getElementById("confetti");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = ["#e5edf7", "#a9c0dd", "#ffffff", "#8ba5c5"];
+  const pieces = [];
+
+  for (let i = 0; i < 130; i++) {
+    pieces.push({
+      x: Math.random() * canvas.width,
+      y: -Math.random() * canvas.height,
+      size: Math.random() * 6 + 3,
+      speed: Math.random() * 3 + 2,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * 360
+    });
+  }
+
+  let frame = 0;
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    pieces.forEach(p => {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+      ctx.restore();
+
+      p.y += p.speed;
+      p.x += Math.sin(p.y / 30);
+      p.rotation += 2;
+    });
+
+    frame++;
+
+    if (frame < 150) {
+      requestAnimationFrame(animate);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  animate();
+}
+
+function backToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+window.addEventListener("resize", () => {
+  const canvas = document.getElementById("confetti");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
